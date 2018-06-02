@@ -2,6 +2,7 @@
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using ParcelableProject.Models;
 
 namespace ParcelableProject.Droid
 {
@@ -31,6 +32,19 @@ namespace ParcelableProject.Droid
             _addressTextView = FindViewById<TextView>(Resource.Id.AddressTextView);
             _cityTextView = FindViewById<TextView>(Resource.Id.CityTextView);
             _countryTextView = FindViewById<TextView>(Resource.Id.CountryTextView);
+
+
+        }
+
+        public void UpdateView(User user)
+        {
+            _idTextView.Text = user.Id.ToString();
+            _firstNameTextView.Text = user.FirstName;
+            _lastNameTextView.Text = user.LastName;
+            _ageTextView.Text = user.Age.ToString();
+            _addressTextView.Text = user.Address;
+            _cityTextView.Text = user.City;
+            _countryTextView.Text = user.Country;
         }
     }
 }
