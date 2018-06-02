@@ -16,6 +16,8 @@ namespace ParcelableProject.Droid
         private TextView _cityTextView;
         private TextView _countryTextView;
 
+        public const string UserParcelableExtra = "UserParcelableExtra";
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
