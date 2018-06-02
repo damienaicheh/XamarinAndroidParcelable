@@ -3,6 +3,8 @@ using Android.Widget;
 using Android.OS;
 using Android.Support.V7.App;
 using ParcelableProject.Models;
+using Android.Content;
+using ParcelableProject.Droid.Parcelables;
 
 namespace ParcelableProject.Droid
 {
@@ -36,7 +38,13 @@ namespace ParcelableProject.Droid
 
         private void SeeMoreBtn_Click(object sender, System.EventArgs e)
         {
-            //Here the magic
+            Intent intent = new Intent(this, typeof(DetailActivity));
+
+            UserParcelable parcelable = new UserParcelable();
+            parcelable.User = _user;
+            intent.PutExtra(DetailActivity.UserParcelableExtra, parcelable);
+
+            StartActivity(intent);
         }
 
 		/// <summary>

@@ -2,6 +2,7 @@
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using ParcelableProject.Droid.Parcelables;
 using ParcelableProject.Models;
 
 namespace ParcelableProject.Droid
@@ -33,7 +34,8 @@ namespace ParcelableProject.Droid
             _cityTextView = FindViewById<TextView>(Resource.Id.CityTextView);
             _countryTextView = FindViewById<TextView>(Resource.Id.CountryTextView);
 
-
+            UserParcelable parcelable = (UserParcelable)Intent.GetParcelableExtra(UserParcelableExtra);
+            UpdateView(parcelable.User);
         }
 
         public void UpdateView(User user)
